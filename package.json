@@ -1,0 +1,24 @@
+{
+  "name": "personal-code-bank",
+  "version": "1.0.0",
+  "description": "The project idea is used within the scope of BTSP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taskiranumut/personal-code-bank.git"
+  },
+  "keywords": [
+    "vanilla.js",
+    "node.js",
+    "express"
+  ],
+  "author": "Umut Taşkıran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taskiranumut/personal-code-bank/issues"
+  },
+  "homepage": "https://github.com/taskiranumut/personal-code-bank#readme"
+}
