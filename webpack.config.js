@@ -3,9 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "none",
-  entry: ".client/src/index.js",
+  entry: "./client/src/index.js",
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + "/client/dist",
     filename: "main.js",
   },
   plugins: [
