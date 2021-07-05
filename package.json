@@ -4,7 +4,8 @@
   "description": "The project idea is used within the scope of BTSP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/taskiranumut/personal-code-bank/issues"
   },
-  "homepage": "https://github.com/taskiranumut/personal-code-bank#readme"
+  "homepage": "https://github.com/taskiranumut/personal-code-bank#readme",
+  "devDependencies": {
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
 }
