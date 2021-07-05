@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "none",
-  entry: "./src/scripts/index.js",
+  entry: ".client/src/index.js",
   output: {
     path: __dirname + "/dist",
     filename: "main.js",
@@ -14,7 +14,7 @@ module.exports = {
         collapseWhitespace: false,
       },
       hash: false,
-      template: "./src/index.html",
+      template: "./client/src/index.html",
     }),
   ],
   devServer: {
