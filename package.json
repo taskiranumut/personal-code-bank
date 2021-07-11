@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
-    "lint": "eslint src --ext .js",
-    "lint-fix": "eslint src --fix --ext .js",
-    "format": "prettier src --write"
+    "lint": "eslint client/src --ext .js",
+    "lint-fix": "eslint client/src --fix --ext .js",
+    "format": "prettier client/src --write"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
-    "eslint": "^7.30.0",
+    "eslint": "^7.2.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
