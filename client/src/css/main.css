@@ -19,7 +19,7 @@
 }
 
 .container {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .form-col-5 {
@@ -30,8 +30,6 @@
   padding: 0 40px 40px 40px;
   background-color: #dfdfff;
 }
-
-/* #a3a3ff63 */
 
 .sign-col-5 {
   width: 37%;
@@ -74,9 +72,9 @@
   margin-top: 30px;
 }
 
-.col button:hover {
+.click-button {
   background-color: #a3a3ff;
-  color: rgb(95, 95, 95);
+  color: #5f5f5f;
 }
 
 input {
