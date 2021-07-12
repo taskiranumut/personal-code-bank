@@ -17,7 +17,20 @@ app.use(
 
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
-app.use('/', loginRoute, registerRoute);
+const blockPost = require('./routes/blockPost');
+const blockGet = require('./routes/blockGet');
+const blockDelete = require('./routes/blockDelete');
+const blockUpdate = require('./routes/blockUpdate');
+
+app.use(
+  '/',
+  loginRoute,
+  registerRoute,
+  blockPost,
+  blockGet,
+  blockDelete,
+  blockUpdate
+);
 
 const Port = process.env.Port || 3000;
 app.listen(Port, () => console.log('Server started..!'));
