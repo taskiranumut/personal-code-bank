@@ -5,23 +5,23 @@ const router = express.Router();
 
 router.put('/id/:blockId', async (req, res) => {
   const { blockTitle, blockTag, blockData } = req.body;
-  console.log({ blockTitle, blockTag, blockData });
-
+  const _id = req.params.blockId;
+  console.log({ _id, blockTitle, blockTag, blockData });
   try {
     await Block.updateOne(
-      { _id: req.params.blockId },
+      { _id },
       {
         $set: { blockTitle },
       }
     );
     await Block.updateOne(
-      { _id: req.params.blockId },
+      { _id },
       {
         $set: { blockTag },
       }
     );
     await Block.updateOne(
-      { _id: req.params.blockId },
+      { _id },
       {
         $set: { blockData },
       }
