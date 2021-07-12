@@ -10,7 +10,66 @@
 </head>
 
 <body>
-    <h1>Hello Code Bank</h1>
+    <div class="container">
+        <div class="col-5 sign-col-5">
+            <div class="row-custom">
+                <div class="col">
+                    <button id="login-btn" class="signin-button">SIGN IN</button>
+                    <button id="register-btn" class="signup-button clearfix">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 form-col-5 clearfix">
+            <div class="row" id="form-box">
+
+                <div class="login-box">
+                    <form id="login-form">
+                        <div class="form-floating flex-center">
+                            <input type="email" class="form-control" id="login-email" placeholder="name@example.com"
+                                required>
+                            <label for="login-email"><i class="fas fa-envelope"></i> Email address</label>
+                        </div>
+                        <div class="form-floating flex-center">
+                            <input type="password" class="form-control" id="login-password" placeholder="Password"
+                                required>
+                            <label for="login-password"><i class="fas fa-key"></i> Password</label>
+                        </div>
+                        <div class="submit form-floating flex-center">
+                            <input type="submit" class="submit-button" value="Sign In" id="submit-login">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <div class="register-box">
+                    <form id="reg-form">
+                        <div class="form-floating flex-center">
+                            <input type="text" class="form-control" id="register-firstname" placeholder="First name"
+                                required>
+                            <label for="register-firstname"><i class="fas fa-user"></i> First Name</label>
+                        </div>
+                        <div class="form-floating flex-center">
+                            <input type="text" class="form-control" id="register-lastname" placeholder="Last name"
+                                required>
+                            <label for="register-lastname"><i class="fas fa-user"></i> Last Name</label>
+                        </div>
+                        <div class="form-floating flex-center">
+                            <input type="email" class="form-control" id="register-email" placeholder="name@example.com"
+                                required>
+                            <label for="register-email"><i class="fas fa-envelope"></i> Email address</label>
+                        </div>
+                        <div class="form-floating flex-center">
+                            <input type="password" class="form-control" id="register-password" placeholder="Password"
+                                required>
+                            <label for="register-password"><i class="fas fa-key"></i> Password</label>
+                        </div>
+                        <div class="submit form-floating flex-center">
+                            <input type="submit" class="submit-button" value="Sign Up" id="submit-register">
+                        </div>
+                    </form>
+                </div> -->
+
+            </div>
+        </div>
 </body>
 
 </html>
