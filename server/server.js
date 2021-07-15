@@ -21,6 +21,7 @@ const blockPost = require('./routes/blockPost');
 const blockGet = require('./routes/blockGet');
 const blockDelete = require('./routes/blockDelete');
 const blockUpdate = require('./routes/blockUpdate');
+const userGet = require('./routes/userGet');
 
 app.use(
   '/',
@@ -29,7 +30,8 @@ app.use(
   blockPost,
   blockGet,
   blockDelete,
-  blockUpdate
+  blockUpdate,
+  userGet
 );
 
 const Port = process.env.Port || 3000;
