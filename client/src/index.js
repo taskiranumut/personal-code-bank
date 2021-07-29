@@ -4,6 +4,11 @@ import './css/main.css';
 
 import App from './scripts/app';
 
-let app = new App();
+let app = new App({
+  signInButtonSelector: '#signin-btn',
+  signUpButtonSelector: '#signup-btn',
+  loginFormSelector: '#login-form',
+  registerFormSelector: '#reg-form',
+});
 
 app.init();
