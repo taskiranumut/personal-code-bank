@@ -1,124 +1,47 @@
 import { showSignInForm, showSignUpForm } from './loginRegisterSwitch';
-import { getUserIdFromLocalStorage } from './localStorage';
-import {
-  loadMainPage,
-  handleNewBlock,
-  fillMainPage,
-  getUserNames,
-} from './mainPage';
+import { loadMainPage } from './mainPage';
+import { loginUser } from './login';
+import { registerUser } from './register';
 
 class App {
-  constructor() {
-    this.allBlocks = [];
+  constructor(option) {
+    const {
+      signInButtonSelector,
+      signUpButtonSelector,
+      loginFormSelector,
+      registerFormSelector,
+    } = option;
+
+    this.$signInButtonEl = document.querySelector(signInButtonSelector);
+    this.$signUpButtonEl = document.querySelector(signUpButtonSelector);
+    this.$loginFormEl = document.querySelector(loginFormSelector);
+    this.$registerFormEl = document.querySelector(registerFormSelector);
   }
 
   handleSignInButton() {
-    const signInButton = document.querySelector('#signin-btn');
-    signInButton.addEventListener('click', showSignInForm);
-  }
-
-  loginSubmit() {
-    const loginForm = document.querySelector('#login-form');
-    if (loginForm) {
-      loginForm.addEventListener('submit', this.loginUser);
-    }
-  }
-
-  async loginUser(e) {
-    e.preventDefault();
-    let allBlocks = [];
-    const email = document.querySelector('#login-email').value;
-    const password = document.querySelector('#login-password').value;
-    const messageDiv = document.querySelector('#message');
-    messageDiv.innerHTML = '';
-
-    const result = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    }).then((res) => res.json());
-    if (result.status === 'ok') {
-      localStorage.setItem('token', result.data);
-      messageDiv.innerHTML = 'Login is successful';
-      loadMainPage();
-      const getUserBlocks = async () => {
-        const userId = getUserIdFromLocalStorage();
-        await fetch('http://localhost:3000/user-blocks', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            user: userId,
-          }),
-        })
-          .then((res) => res.json())
-          .then((res) => {
-            allBlocks = res.reverse();
-          });
-      };
-      const userId = getUserIdFromLocalStorage();
-      getUserNames(userId);
-      getUserBlocks()
-        .then(() => {
-          fillMainPage(allBlocks);
-        })
-        .then(() => {
-          handleNewBlock(allBlocks);
-        });
-    } else {
-      messageDiv.innerHTML = result.error;
-    }
+    this.$signInButtonEl.addEventListener('click', showSignInForm);
   }
 
   handleSignUpButton() {
-    const signUpButton = document.querySelector('#signup-btn');
-    signUpButton.addEventListener('click', showSignUpForm);
+    this.$signUpButtonEl.addEventListener('click', showSignUpForm);
   }
 
-  signUpSubmit() {
-    const regForm = document.querySelector('#reg-form');
-    if (regForm) {
-      regForm.addEventListener('submit', this.registerUser);
-    }
+  loginSubmit() {
+    this.$loginFormEl.addEventListener('submit', async (e) => {
+      const loginResult = await loginUser(e);
+      loadMainPage(loginResult.status);
+    });
   }
 
-  async registerUser(e) {
-    e.preventDefault();
-    const firstName = document.querySelector('#register-firstname').value;
-    const lastName = document.querySelector('#register-lastname').value;
-    const email = document.querySelector('#register-email').value;
-    const password = document.querySelector('#register-password').value;
-    const messageDiv = document.querySelector('#message');
-    messageDiv.innerHTML = '';
-
-    const result = await fetch('http://localhost:3000/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        password,
-      }),
-    }).then((res) => res.json());
-    if (result.status === 'ok') {
-      messageDiv.innerHTML = 'Registration completed. Please sign in.';
-      document.querySelector('#register-firstname').value = '';
-      document.querySelector('#register-lastname').value = '';
-      document.querySelector('#register-email').value = '';
-      document.querySelector('#register-password').value = '';
-    } else {
-      messageDiv.innerHTML = result.error;
-    }
+  registerSubmit() {
+    this.$registerFormEl.addEventListener('submit', registerUser);
   }
 
   init() {
     this.handleSignInButton();
     this.handleSignUpButton();
     this.loginSubmit();
-    this.signUpSubmit();
+    this.registerSubmit();
   }
 }
 
