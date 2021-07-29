@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const blockBank2 = mongoose.Schema({
+const blocks = mongoose.Schema({
   blockTitle: {
     type: String,
     requred: true,
@@ -16,7 +16,7 @@ const blockBank2 = mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'UserBank2',
+    ref: 'Users',
   },
   date: {
     type: Date,
@@ -24,4 +24,4 @@ const blockBank2 = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('BlockBank2', blockBank2);
+module.exports = mongoose.model('Blocks', blocks);

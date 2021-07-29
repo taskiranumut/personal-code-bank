@@ -1,16 +1,11 @@
 import { showSignInForm, showSignUpForm } from './loginRegisterSwitch';
-import { getUserIdFromLocalStorage, removeLocalStorage } from './localStorage';
+import { getUserIdFromLocalStorage } from './localStorage';
 import {
   loadMainPage,
-  fillTags,
-  fillBlocks,
-  fillUsername,
   handleNewBlock,
   fillMainPage,
   getUserNames,
 } from './mainPage';
-import { blockCreateElementData } from './elementDatas/mainPageDatas';
-// import { getAllBlocks } from './fetch/userBlocksGet';
 
 class App {
   constructor() {
@@ -109,7 +104,11 @@ class App {
       }),
     }).then((res) => res.json());
     if (result.status === 'ok') {
-      messageDiv.innerHTML = 'Registration is completed.';
+      messageDiv.innerHTML = 'Registration completed. Please sign in.';
+      document.querySelector('#register-firstname').value = '';
+      document.querySelector('#register-lastname').value = '';
+      document.querySelector('#register-email').value = '';
+      document.querySelector('#register-password').value = '';
     } else {
       messageDiv.innerHTML = result.error;
     }

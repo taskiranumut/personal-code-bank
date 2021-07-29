@@ -13,12 +13,12 @@ router.post('/block', async (req, res) => {
       blockData,
       user,
     });
+    res.json({ status: 'ok', data: response });
     console.log('Block created:', response);
   } catch (error) {
     console.log(JSON.stringify(error));
     return res.json({ status: 'error', error: 'Something is wrong :(' });
   }
-  res.json({ status: 'ok' });
 });
 
 module.exports = router;

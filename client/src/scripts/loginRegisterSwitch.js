@@ -1,4 +1,6 @@
 export const showSignInForm = () => {
+  clearMessageDiv();
+
   const signUpButton = document.querySelector('#signup-btn');
   signUpButton.classList.add('click-button');
 
@@ -16,6 +18,8 @@ export const showSignInForm = () => {
 };
 
 export const showSignUpForm = () => {
+  clearMessageDiv();
+
   const signInButton = document.querySelector('#signin-btn');
   signInButton.classList.add('click-button');
 
@@ -30,4 +34,9 @@ export const showSignUpForm = () => {
 
   const logRegFrame = document.querySelector('#log-reg-frame');
   logRegFrame.style.height = '500px';
+};
+
+const clearMessageDiv = () => {
+  const messageDiv = document.querySelector('#message');
+  messageDiv.innerHTML = '';
 };

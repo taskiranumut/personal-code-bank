@@ -93,7 +93,7 @@ export const blockCreateElementData = `<div class="padding-7px">
 <div class="block-data-container">
 <label for="block-data-textarea" class="tag-data-labels">Block Data</label>
 <code id="block-data-code">
-<textarea name="" id="block-data-textarea" cols="30" rows="10"
+<textarea name="" id="block-data-textarea" cols="30" rows="15"
     class="form-control"></textarea>
 </code>
 </div>
@@ -118,7 +118,7 @@ export const blockUpdateElementData = `<div class="padding-7px">
 <div class="block-data-container">
 <label for="block-data-textarea" class="tag-data-labels">Block Data</label>
 <code id="block-data-code">
-<textarea name="" id="block-data-textarea" cols="30" rows="10"
+<textarea name="" id="block-data-textarea" cols="30" rows="15"
     class="form-control"></textarea>
 </code>
 </div>

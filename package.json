@@ -46,7 +46,10 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/node": "^7.14.7",
     "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/register": "^7.14.5",
     "bcryptjs": "^2.4.3",
     "body": "^5.1.0",
     "bootstrap": "^5.0.2",

@@ -28,14 +28,15 @@ router.post('/register', async (req, res) => {
       email,
       password,
     });
+    res.json({ status: 'ok', data: response });
     console.log('User created:', response);
   } catch (error) {
     if (error.code === 11000) {
+      console.log(JSON.stringify(error));
       return res.json({ status: 'error', error: 'Email aldready in use!' });
     }
     throw error;
   }
-  res.json({ status: 'ok' });
 });
 
 module.exports = router;
