@@ -8,11 +8,33 @@ import {
 
 import { getUserIdFromLocalStorage } from './localStorage';
 
+import { getUserBlocksFromDatabase } from './fetch/post';
+
 let temp = '';
 
-export const loadMainPage = () => {
-  const bigContainerDiv = document.querySelector('#big-container');
-  bigContainerDiv.innerHTML = mainPageElementsData;
+export const loadMainPage = (status) => {
+  if (status === 'ok') {
+    const bigContainerDiv = document.querySelector('#big-container');
+    bigContainerDiv.innerHTML = mainPageElementsData;
+    const userId = getUserIdFromLocalStorage();
+    loadAllDatasToMainPage(userId);
+  }
+};
+
+const loadAllDatasToMainPage = async (userId) => {
+  let allBlocks = null;
+  getUserNames(userId);
+  getUserBlocksFromDatabase(userId)
+    .then((res) => res.json())
+    .then((res) => {
+      allBlocks = res.reverse();
+    })
+    .then(() => {
+      fillMainPage(allBlocks);
+    })
+    .then(() => {
+      handleNewBlock(allBlocks);
+    });
 };
 
 export const fillTags = (blockArray) => {
