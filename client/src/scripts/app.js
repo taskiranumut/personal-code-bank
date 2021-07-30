@@ -26,22 +26,22 @@ class App {
     this.$signUpButtonEl.addEventListener('click', showSignUpForm);
   }
 
-  loginSubmit() {
+  handleLoginSubmit() {
     this.$loginFormEl.addEventListener('submit', async (e) => {
       const loginResult = await loginUser(e);
       loadMainPage(loginResult.status);
     });
   }
 
-  registerSubmit() {
+  handleRegisterSubmit() {
     this.$registerFormEl.addEventListener('submit', registerUser);
   }
 
   init() {
     this.handleSignInButton();
     this.handleSignUpButton();
-    this.loginSubmit();
-    this.registerSubmit();
+    this.handleLoginSubmit();
+    this.handleRegisterSubmit();
   }
 }
 
