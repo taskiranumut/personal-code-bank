@@ -35,3 +35,17 @@ export const getUserBlocksFromDatabase = (userId) => {
     }),
   });
 };
+
+export const saveNewblockToDatabase = (blockInfos) => {
+  const { blockTitle, blockTag, blockData, user } = blockInfos;
+  return fetch(`${API_URL}/block`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      blockTitle,
+      blockTag,
+      blockData,
+      user,
+    }),
+  });
+};
