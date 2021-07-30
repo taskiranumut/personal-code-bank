@@ -21,7 +21,7 @@
 /* LOGIN-REGISTER PAGE */
 
 .login-register-container {
-  margin-top: 10%;
+  margin-top: 6%;
 }
 
 .form-col-5 {
@@ -73,11 +73,6 @@
   border-radius: 20px;
   margin-top: 30px;
 }
-
-/* ADD SHADOW !! DON'T USE YET !! */
-/* .submit-button:hover {
-  border: 3px solid #4949ff;
-} */
 
 .login-register-input {
   margin: 10px;
@@ -338,4 +333,12 @@ BLOCK DATA PAGE
 #delete-button {
   color: darkred;
   text-align: left;
+}
+
+.title {
+  padding-top: 4%;
+  text-align: center;
+  font-size: 50px;
+  color: #4343ffdc;
+  font-weight: bold;
 }
