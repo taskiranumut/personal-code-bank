@@ -13,7 +13,6 @@ export const loadMainPage = (status) => {
     handleNewBlock();
     handleTagFilter();
     handleSearchForm();
-    // anasayfa butonu eklenecek.
   }
 };
 
