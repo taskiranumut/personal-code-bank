@@ -33,8 +33,15 @@ export const handleSearchForm = () => {
       });
       document.querySelector('#search-input').value = '';
       if (matchedBlocks.length === 0) {
-        const blockContainerEl = document.querySelector('#blocks-container');
-        blockContainerEl.innerHTML = `<center><h6> No Match </h6></center>`;
+        const blockDataContainer = document.querySelector(
+          '#block-data-container'
+        );
+        blockDataContainer.innerHTML = `<div class="tag-container">
+          <div class="block-tag">
+            <i class="fas fa-cube"></i>
+            Blocks
+          </div></div>
+          <div id="blocks-container"><center><h6> No Match </h6></center></div>`;
       } else {
         fillFilteredBlocks(matchedBlocks);
       }

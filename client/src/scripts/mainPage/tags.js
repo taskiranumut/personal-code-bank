@@ -1,5 +1,4 @@
 import { allUserBlocks } from './blocks';
-import { randomIdGenerator } from '../helpers';
 
 export const fillTags = async () => {
   const allBlocks = await allUserBlocks();
