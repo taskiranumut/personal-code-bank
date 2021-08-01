@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
 import './css/main.css';
+import '../codeMirror/lib/codemirror.js';
+import '../codeMirror/lib/codemirror.css';
+import '../codeMirror/mode/javascript/javascript.js';
+import '../codeMirror/theme/base16-light.css';
 import App from './scripts/app';
 
 let app = new App({
