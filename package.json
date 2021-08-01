@@ -1,7 +1,7 @@
 {
   "name": "personal-code-bank",
   "version": "1.0.0",
-  "description": "The project idea is used within the scope of BTSP",
+  "description": "The project idea is used within the scope of METU-CEC Information Technologies Certificate Program (BTSP)",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
