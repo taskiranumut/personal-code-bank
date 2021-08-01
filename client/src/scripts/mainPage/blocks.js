@@ -1,5 +1,6 @@
 import { getUserBlocksFromDatabase } from '../fetch/post';
 import { getUserIdFromLocalStorage } from '../helpers';
+import { fillTags } from './tags';
 import { handleShowBlock } from './updateBlock';
 
 export const allUserBlocks = async () => {
@@ -17,8 +18,8 @@ export const fillBlocks = async () => {
   const blockDataContainer = document.querySelector('#block-data-container');
   blockDataContainer.innerHTML = `<div class="tag-container">
     <div class="block-tag">
-      <i class="fas fa-cube"></i>
-      Blocks
+    <div id="all-blocks">
+    <span><i class="fas fa-cube"></i> Blocks</span> </div>
     </div></div>
     <div id="blocks-container"></div>`;
   const blockContainer = document.querySelector('#blocks-container');
@@ -41,6 +42,7 @@ export const fillBlocks = async () => {
       </div>
       </div>`;
   });
+  refreshAllBlocks();
   handleShowBlock();
 };
 
@@ -48,8 +50,8 @@ export const fillFilteredBlocks = (filteredBlocks) => {
   const blockDataContainer = document.querySelector('#block-data-container');
   blockDataContainer.innerHTML = `<div class="tag-container">
     <div class="block-tag">
-      <i class="fas fa-cube"></i>
-      Blocks
+    <div id="all-blocks">
+    <span><i class="fas fa-cube"></i> Blocks</span> </div>
     </div></div>
     <div id="blocks-container"></div>`;
   const blockContainer = document.querySelector('#blocks-container');
@@ -71,5 +73,14 @@ export const fillFilteredBlocks = (filteredBlocks) => {
       </div>
       </div>`;
   });
+  refreshAllBlocks();
   handleShowBlock();
+};
+
+export const refreshAllBlocks = () => {
+  const $blocksEl = document.querySelector('#all-blocks');
+  $blocksEl.addEventListener('click', async () => {
+    fillBlocks();
+    fillTags();
+  });
 };

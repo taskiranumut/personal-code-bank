@@ -1,5 +1,4 @@
-import { fillFilteredBlocks } from './blocks';
-import { allUserBlocks } from './blocks';
+import { allUserBlocks, fillFilteredBlocks, refreshAllBlocks } from './blocks';
 import { clearClickTagClass, addClickTagClass } from '../helpers';
 
 export const handleTagFilter = () => {
@@ -38,10 +37,11 @@ export const handleSearchForm = () => {
         );
         blockDataContainer.innerHTML = `<div class="tag-container">
           <div class="block-tag">
-            <i class="fas fa-cube"></i>
-            Blocks
+          <div id="all-blocks">
+          <span><i class="fas fa-cube"></i> Blocks</span> </div>
           </div></div>
           <div id="blocks-container"><center><h6> No Match </h6></center></div>`;
+        refreshAllBlocks();
       } else {
         fillFilteredBlocks(matchedBlocks);
       }

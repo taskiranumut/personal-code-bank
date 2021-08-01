@@ -342,3 +342,18 @@ BLOCK DATA PAGE
   color: #4343ffdc;
   font-weight: bold;
 }
+
+#all-blocks {
+  width: 150px;
+  margin: auto;
+}
+
+#all-blocks:hover span {
+  display: none;
+}
+
+#all-blocks:hover:after {
+  content: 'Get All Blocks';
+  cursor: pointer;
+  color: #7879ff;
+}
