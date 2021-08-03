@@ -2,6 +2,8 @@
 
 The Personal Code Bank project has been developed within the scope of the Information Technologies Certificate Program within METU-CEC. Personal Code Bank is a web application where code blocks such as code snippets, algorithm components can be stored. Code blocks can be created, edited or deleted. Filtering also can be applied by tag or by title. A special color highlight is applied to the JavaScript language for the code blocks entered. With user registration and login, the application offers a personal workspace. All data is kept in the database.
 
+[Project Preview Video](https://youtu.be/Uhdu8cF1uyQ)
+
 ### Development Process
 
 The Waterfall Model has been used while developing the project. The development stages are as follows:
@@ -41,6 +43,8 @@ The `npm start` command is used to start the server. The server runs at `localho
 # Kişisel Kod Bankası
 
 Kişisel Kod Bankası projesi ODTÜ SEM bünyesinde yer alan Bilgi Teknolojileri Sertifika Programı (BTSP) kapsamında geliştirildi. Kişisel Kod Bankası kod, algoritma, bileşen gibi kod bloklarının saklanabildiği bir web uygulamasıdır. Kod blokları oluşturulabilir, düzenlenebilir veya silinebilir. Aynı zamanda etikete göre veya başlığa göre filtreleme yapılabilir. Girilen kod blokları için JavaScript diline özel renkli vurgu uygulanır. Kullanıcı kayıt ve girişi ile uygulama kişisel çalışma alanı sunar. Tüm veriler veritabanında tutulur.
+
+[Projenin Önizleme Videosu](https://youtu.be/Uhdu8cF1uyQ)
 
 ### Geliştirme Süreci
 
